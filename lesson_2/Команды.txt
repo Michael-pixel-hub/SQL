@@ -1,0 +1,11 @@
+Создание дампа:
+
+student@Ubuntu-MySQL-VirtualBox:~$ sudo mysqldump example > /home/student/test.sql
+
+Развертывание дампа:
+
+student@Ubuntu-MySQL-VirtualBox:~$ sudo mysql sample < /home/student/test.sql
+
+Создаем дамп 100 строк файла help_keyword:
+
+student@Ubuntu-MySQL-VirtualBox:~$ sudo mysqldump --where='true limit 101' help_keyword > /home/student/test15.sql
