@@ -1,0 +1,19 @@
+# Домашнее задание 5.1
+
+CREATE DATABASE dz2;
+
+USE dz2;
+
+CREATE TABLE users(
+	id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	birthday DATE NOT NULL
+);
+
+INSERT INTO users
+VALUES (DEFAULT, '1999-12-01'), (DEFAULT, '1988-11-02'), (DEFAULT, '1988-11-02'), (DEFAULT, '1987-11-02');
+
+SELECT ROUND(AVG((TO_DAYS(NOW()) - TO_DAYS(birthday))/365.25)) AS age FROM users;
+
+# Домашнее задание 5.2
+
+SELECT COUNT(*) AS counts, DAYNAME(DATE_FORMAT(birthday, '2021-%m-%d')) AS bi FROM users GROUP BY bi;
